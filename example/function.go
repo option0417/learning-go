@@ -1,4 +1,4 @@
-package main
+package example
 
 func add2(x int, y int) int {
 	return x + y
