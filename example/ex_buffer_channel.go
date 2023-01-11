@@ -23,5 +23,5 @@ func main() {
 	ch := make(chan int, 2)
 	go put(ch)
 	go get(ch)
-		time.Sleep(1000 * time.Millisecond)
+	time.Sleep(1000 * time.Millisecond)
 }
