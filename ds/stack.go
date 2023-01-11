@@ -12,7 +12,7 @@ type Entry struct {
 	Val int
 }
 
-func BuildMyStack(capacity int) *MyStack {
+func BuildStack(capacity int) *MyStack {
 	entries := make([]Entry, capacity)
 	myStack := MyStack{capacity, 0, entries}
 	return &myStack
@@ -49,4 +49,12 @@ func (s *MyStack) isFull() bool {
 
 func (s *MyStack) isEmpty() bool {
 	return s.currSize == 0
+}
+
+func (s *MyStack) GetCapacity() int {
+	return s.capacity
+}
+
+func (s *MyStack) GetSize() int {
+	return s.currSize
 }
