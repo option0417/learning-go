@@ -11,7 +11,7 @@ func TestBuildStack(t *testing.T) {
 	}
 
 	if 0 != myStack.GetSize() {
-		t.Errorf("Wrong size that except is 0 but got %d\n", myStack.GetSize())
+		t.Errorf("Wrong size that except is %d but got %d\n", 0, myStack.GetSize())
 	}
 }
 
@@ -30,5 +30,9 @@ func TestPushToStack(t *testing.T) {
 	}
 	if !myStack.Push(entry3) {
 		t.Errorf("Push Entry with value %d failed\n", entry3.Val)
+	}
+
+	if 3 != myStack.GetSize() {
+		t.Errorf("Wrong size of stack that except is %d but got %d\n", 3, myStack.GetSize())
 	}
 }
