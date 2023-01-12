@@ -36,3 +36,40 @@ func TestPushToStack(t *testing.T) {
 		t.Errorf("Wrong size of stack that except is %d but got %d\n", 3, myStack.GetSize())
 	}
 }
+
+func TestPopFromStack(t *testing.T) {
+	_capacity := 3
+	_entries := []Entry{Entry{Val: 1}, Entry{Val: 2}, Entry{Val: 3}}
+	myStack := MyStack{capacity: _capacity, currSize: _capacity, entries: _entries}
+
+	if _capacity != myStack.GetCapacity() {
+		t.Errorf("Wrong capacity that except is %d but got %d\n", _capacity, myStack.GetCapacity())
+	}
+
+	if _capacity != myStack.GetSize() {
+		t.Errorf("Wrong size that except is %d but got %d\n", 3, myStack.GetSize())
+	}
+
+	rtnVal := myStack.Pop().Val
+	if 3 != rtnVal {
+		t.Errorf("Wrong value from pop() which except is %d but got %d\n", 3, rtnVal)
+	}
+
+	rtnVal = myStack.Pop().Val
+	if 2 != rtnVal {
+		t.Errorf("Wrong value from pop() which except is %d but got %d\n", 2, rtnVal)
+	}
+
+	rtnVal = myStack.Pop().Val
+	if 1 != rtnVal {
+		t.Errorf("Wrong value from pop() which except is %d but got %d\n", 1, rtnVal)
+	}
+
+	if _capacity != myStack.GetCapacity() {
+		t.Errorf("Wrong capacity that except is %d but got %d\n", _capacity, myStack.GetCapacity())
+	}
+
+	if 0 != myStack.GetSize() {
+		t.Errorf("Wrong size that except is %d but got %d\n", 0, myStack.GetSize())
+	}
+}
