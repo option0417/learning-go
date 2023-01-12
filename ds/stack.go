@@ -1,7 +1,5 @@
 package ds
 
-import "fmt"
-
 type MyStack struct {
 	capacity int
 	currSize int
@@ -19,8 +17,6 @@ func BuildStack(capacity int) *MyStack {
 }
 
 func (s *MyStack) Push(entry Entry) bool {
-	fmt.Printf("Invoke push\n")
-
 	if !s.isFull() {
 		s.entries[s.currSize] = entry
 		s.currSize++
@@ -31,8 +27,6 @@ func (s *MyStack) Push(entry Entry) bool {
 }
 
 func (s *MyStack) Pop() Entry {
-	fmt.Printf("Invoke pop\n")
-
 	var rtnEntry Entry
 
 	if !s.isEmpty() {
