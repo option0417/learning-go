@@ -1,7 +1,5 @@
 package ds
 
-import "fmt"
-
 type QEntry struct {
 	val int
 }
@@ -41,7 +39,6 @@ func (q *MyQueue) Size() int {
 }
 
 func (q *MyQueue) EnQueue(e *QEntry) bool {
-	fmt.Printf("Invoke enQueue\n")
 	if !q.IsFull() {
 		q.entries[q.headIdx] = *e
 
@@ -54,8 +51,6 @@ func (q *MyQueue) EnQueue(e *QEntry) bool {
 }
 
 func (q *MyQueue) DeQueue() *QEntry {
-	fmt.Printf("Invoke deQueue\n")
-
 	if !q.IsEmpty() {
 		rtnEntry := q.entries[q.tailIdx]
 
