@@ -175,5 +175,5 @@ func TestDeQueueFail(t *testing.T) {
 		t.Errorf("Test failed since \"IsFull\" return true\n")
 	}
 
-	nullEntry := myQueue.DeQueue()
+	//nullEntry := myQueue.DeQueue()
 }
