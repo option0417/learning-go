@@ -1,5 +1,13 @@
 package main
 
+import (
+	"fmt"
+
+	"tw.com.wd.learning/api"
+)
+
 func main() {
-	myStack := BuildMyStack(10)
+	fmt.Printf("Start API Server\n")
+
+	api.StartApiServer()
 }

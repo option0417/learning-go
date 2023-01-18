@@ -1,7 +1,6 @@
-package main
+package api
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,6 +11,13 @@ func StartApiServer() {
 		_context.JSON(200, gin.H{
 			"messagage": "pong",
 		})
-	}}
-	api.Run()
+	})
+
+	api.POST("/ping", func(_context *gin.Context) {
+		_context.JSON(200, gin.H{
+			"resp": "ok",
+			"code": 0,
+		})
+	})
+	api.Run(":9080")
 }
